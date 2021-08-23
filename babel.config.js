@@ -24,6 +24,8 @@ module.exports = {
           '@screens': './app/screens',
           '@services': './app/services',
           '@state': './app/state',
+          '@async': './app/state/async',
+          '@redux': './app/state/redux',
           '@theme': './app/theme',
         },
       },
