@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text as RNText } from 'react-native'
+import React from 'react'
+import { Text as RNText } from 'react-native'
 
 const Text = props => {
   const { children } = props
 
-  return <RNText>{children}</RNText>
+  const styles = {
+    fontSize: 18,
+  }
+
+  return <RNText style={styles}>{children}</RNText>
 }
 
 export default Text
