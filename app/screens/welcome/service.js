@@ -8,10 +8,6 @@ const useService = props => {
 
   const { message } = useSelector(state => state.message)
 
-  const updateWelcomeText = () => {
-    dispatch(setMessage('Welcome back to React Native Starter Kit'))
-  }
-
   useEffect(() => {
     let { get, set, Item } = useAsync()
 
@@ -21,7 +17,15 @@ const useService = props => {
     })
   }, [])
 
-  return { message }
+  function updateWelcomeText() {
+    dispatch(setMessage('Welcome back to React Native Starter Kit'))
+  }
+
+  function onContinue() {
+    props.navigation.navigate('Users')
+  }
+
+  return { message, onContinue }
 }
 
 export default useService

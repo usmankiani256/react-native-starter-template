@@ -2,7 +2,8 @@ const styles = {
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
+    paddingVertical: '33%',
   },
 }
 
