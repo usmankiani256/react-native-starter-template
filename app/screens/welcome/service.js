@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react'
-import useAsync from '@state/async'
+import useAsync from '@async'
+import { setMessage } from '@redux/Message'
+import { useDispatch, useSelector } from 'react-redux'
 
 const useService = props => {
-  const [welcomeText, setWelcomeText] = useState('')
+  const dispatch = useDispatch()
 
-  const updateWelcomeText = user => {
-    user
-      ? setWelcomeText('Welcome back to React Native Starter Kit')
-      : setWelcomeText('Welcome to React Native Starter Kit')
+  const { message } = useSelector(state => state.message)
+
+  const updateWelcomeText = () => {
+    dispatch(setMessage('Welcome back to React Native Starter Kit'))
   }
 
   useEffect(() => {
     let { get, set, Item } = useAsync()
 
     get(Item.USER).then(user => {
-      updateWelcomeText(user)
+      user && updateWelcomeText()
       set(Item.USER, true)
     })
   }, [])
 
-  return { welcomeText }
+  return { message }
 }
 
 export default useService

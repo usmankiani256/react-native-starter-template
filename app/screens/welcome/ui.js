@@ -6,11 +6,11 @@ import { View } from 'react-native'
 import { Text } from '@components'
 
 const Welcome = props => {
-  const { welcomeText } = useService(props)
+  const { message } = useService(props)
 
   return (
     <View style={styles.container}>
-      <Text>{welcomeText}</Text>
+      <Text>{message}</Text>
     </View>
   )
 }
