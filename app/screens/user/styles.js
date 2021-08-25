@@ -4,6 +4,9 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  space: {
+    height: 100,
+  },
 }
 
 export default styles

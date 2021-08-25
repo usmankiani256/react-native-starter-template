@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import styles from './styles.js'
 
 import WelcomeScreen from '@screens/welcome'
-import UsersScreen from '@screens/users'
+import UserScreen from '@screens/user'
 
 const Stack = createNativeStackNavigator()
 
@@ -23,7 +23,7 @@ const StackNavigator = () => {
         />
         <Stack.Screen
           name="Users"
-          component={UsersScreen}
+          component={UserScreen}
           options={styles.headerHidden}
         />
       </Stack.Navigator>

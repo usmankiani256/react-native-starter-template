@@ -6,11 +6,11 @@ import { View } from 'react-native'
 import { Text, Button } from '@components'
 
 const Welcome = props => {
-  const { getUsers } = useService(props)
+  const { getUser } = useService(props)
 
-  const { loading, error, data, refetch } = getUsers
+  const { loading, error, data, refetch } = getUser
 
-  if (!loading) {
+  if (loading) {
     return (
       <View style={styles.container}>
         <Text>Fetching users...</Text>
@@ -26,9 +26,14 @@ const Welcome = props => {
     )
   }
 
+  let user = data.user
+
   return (
     <View style={styles.container}>
-      <Text>{JSON.stringify(data)}</Text>
+      <Text>ID: {user.id}</Text>
+      <Text>Name: {user.name}</Text>
+      <Text>Username: {user.username}</Text>
+      <View style={styles.space} />
       <Button onPress={() => refetch()}>Refetch</Button>
     </View>
   )
