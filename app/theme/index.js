@@ -15,7 +15,7 @@ export const Colors = {
   secondary: 'green',
 }
 
-export const PaperTheme = {
+export const theme = {
   ...DefaultTheme,
   roundness: 6,
   colors: {
